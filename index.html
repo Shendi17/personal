@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon (à ajouter plus tard) -->
     <link rel="icon" type="image/png" href="favicon.png">
     <meta http-equiv="Cache-control" content="public, max-age=31536000">
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900 font-sans leading-normal tracking-normal" style="font-family: 'Montserrat', sans-serif;">
+<body id="top" class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900 font-sans leading-normal tracking-normal" style="font-family: 'Montserrat', sans-serif;">
     <!-- Loader d'intro premium -->
     <div id="loader" class="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-200 z-50 animate-fadeInDown">
         <div class="loader-inner">
@@ -24,11 +24,48 @@
     </div>
     <header class="bg-white bg-opacity-80 shadow-lg fixed w-full z-50 backdrop-blur-md animate-fadeInDown" role="banner">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center" role="navigation" aria-label="Navigation principale">
-            <div class="text-2xl font-bold text-gray-800 drop-shadow-md" aria-label="Logo Anthony Legros">Anthony Legros</div>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-blue-600 transition" aria-label="Aller à la section À propos">À propos</a>
-                <a href="#projects" class="hover:text-blue-600 transition" aria-label="Aller à la section Projets">Projets</a>
-                <a href="#contact" class="hover:text-blue-600 transition" aria-label="Aller à la section Contact">Contact</a>
+            <div class="text-2xl font-bold text-gray-800 drop-shadow-md" aria-label="Logo Anthony Legros"><a href="#top" class="text-2xl font-bold text-gray-800 drop-shadow-md" aria-label="Retour en haut de page">Anthony Legros</a></div>
+            <div class="flex items-center gap-4">
+                <div class="space-x-4">
+                    <a href="#about" class="hover:text-blue-600 transition" aria-label="Aller à la section À propos">À propos</a>
+                    <a href="#timeline" class="hover:text-blue-600 transition" aria-label="Aller à la section Parcours">Parcours</a>
+                    <a href="#projects-carousel" class="hover:text-blue-600 transition" aria-label="Aller à la section Réalisations">Réalisations</a>
+                    <a href="#stats" class="hover:text-blue-600 transition" aria-label="Aller à la section Chiffres clés">Chiffres clés</a>
+                    <a href="#services" class="hover:text-blue-600 transition" aria-label="Aller à la section Services">Services</a>
+                    <a href="#shop" class="hover:text-blue-600 transition" aria-label="Aller à la section Boutique">Boutique</a>
+                    <a href="#don" class="hover:text-blue-600 transition" aria-label="Aller à la section Faire un don">Faire un don</a>
+                    <a href="#contact" class="hover:text-blue-600 transition" aria-label="Aller à la section Contact">Contact</a>
+                    <a href="#blog" class="hover:text-blue-600 transition" aria-label="Aller à la section Blog">Blog</a>
+                    <a href="#liens-utiles" class="hover:text-blue-600 transition" aria-label="Aller à la section Liens utiles">Liens utiles</a>
+                    <div class="relative inline-block">
+                        <button type="button" id="autresMenuBtn" tabindex="0"
+                            class="hover:text-blue-600 transition focus:outline-none flex items-center gap-1"
+                            aria-haspopup="true" aria-expanded="false">
+                            Autres <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="autresDropdown" class="absolute hidden bg-white min-w-[220px] shadow-lg rounded z-50 mt-2 right-0 text-left animate-fadeInUp border"
+                             tabindex="-1">
+                            <a href="#testimonials" class="block px-4 py-2 hover:bg-blue-50">Témoignages</a>
+                            <a href="#faq" class="block px-4 py-2 hover:bg-blue-50">FAQ</a>
+                            <a href="#team" class="block px-4 py-2 hover:bg-blue-50">L’équipe</a>
+                            <a href="#events" class="block px-4 py-2 hover:bg-blue-50">Actualités & Événements</a>
+                            <a href="#files" class="block px-4 py-2 hover:bg-blue-50">Fichiers à télécharger</a>
+                            <a href="#social" class="block px-4 py-2 hover:bg-blue-50">Réseaux sociaux</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Télécharger mon CV -->
+                <a href="cv_anthony_legros.pdf" download class="ml-4 flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 hover:from-blue-700 hover:to-blue-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300" aria-label="Télécharger mon CV">
+                    <i class="fas fa-file-arrow-down text-lg"></i>
+                    <span class="hidden sm:inline">Télécharger mon CV</span>
+                </a>
+                <!-- Switch mode sombre/clair -->
+                <button id="themeSwitch" aria-label="Changer de thème" class="ml-4 bg-gray-200 dark:bg-gray-700 rounded-full w-12 h-7 flex items-center transition-all shadow-inner border border-gray-300 dark:border-gray-600 relative focus:outline-none">
+                    <span class="absolute left-1 top-1 w-5 h-5 rounded-full bg-white dark:bg-gray-900 shadow-md transition-all theme-switch-thumb flex items-center justify-center">
+                        <i class="fas fa-moon text-yellow-400 text-xs dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-300 text-xs hidden dark:inline"></i>
+                    </span>
+                </button>
             </div>
         </nav>
     </header>
@@ -47,7 +84,7 @@
 
         <section id="about" class="py-16" aria-labelledby="about-title">
             <h2 id="about-title" class="text-3xl font-bold text-center mb-8">À propos de moi</h2>
-            <div class="max-w-2xl mx-auto text-center">
+            <div class="max-w-2xl mx-auto text-center mb-12">
                 <p class="text-gray-700 leading-relaxed">
                     Je suis un Technicien Polyvalent passionné par la maintenance industrielle et les solutions techniques. 
                     Mon expertise couvre un large éventail de compétences techniques, de la maintenance préventive et corrective 
@@ -55,10 +92,7 @@
                     tout en contribuant à l'amélioration continue des processus.
                 </p>
             </div>
-        </section>
-
-        <section id="projects" class="py-16" aria-labelledby="projects-title">
-            <h2 id="projects-title" class="text-3xl font-bold text-center mb-8">Projets</h2>
+            <!-- Cartes "Projets/Expertises" déplacées ici -->
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white bg-opacity-70 rounded-lg shadow-xl p-6 hover:shadow-2xl transition glassmorphism animate-fadeInUp">
                     <h3 class="text-xl font-semibold mb-4">Maintenance Industrielle</h3>
@@ -75,6 +109,221 @@
                     <p class="text-gray-600">Participation active aux projets d'amélioration des processus et des équipements. 
                     Proposition de solutions innovantes pour optimiser la performance.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Timeline premium horizontale -->
+        <section id="timeline" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Mon Parcours</h2>
+            <div class="timeline-horizontal-container overflow-x-auto pb-8">
+                <ol class="timeline-horizontal flex items-center gap-12 min-w-[800px] md:min-w-[1000px] px-6">
+                    <li class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2023 - Présent</span>
+                            <h3 class="timeline-title">Technicien Polyvalent</h3>
+                            <span class="timeline-where">Waohost, Freelance</span>
+                            <p class="timeline-desc">Maintenance industrielle, gestion technique, automatisation, développement web et support technique.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2020 - 2023</span>
+                            <h3 class="timeline-title">Technicien de Maintenance</h3>
+                            <span class="timeline-where">IndustrielX</span>
+                            <p class="timeline-desc">Maintenance préventive et corrective, amélioration continue, formation des équipes.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2018 - 2020</span>
+                            <h3 class="timeline-title">Apprenti Technicien</h3>
+                            <span class="timeline-where">TechForm</span>
+                            <p class="timeline-desc">Alternance, apprentissage des bases techniques, premiers projets d’automatisation.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2016 - 2018</span>
+                            <h3 class="timeline-title">BTS Maintenance</h3>
+                            <span class="timeline-where">Lycée ProTech</span>
+                            <p class="timeline-desc">Obtention du diplôme, stages en entreprise, premières missions terrain.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Carrousel premium de réalisations -->
+        <section id="projects-carousel" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Réalisations marquantes</h2>
+            <div class="carousel-container mx-auto max-w-3xl relative">
+                <button class="carousel-arrow left" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                    <div class="carousel-slide glassmorphism shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Projet 1" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">Supervision IoT Usine</h3>
+                            <p class="carousel-desc">Déploiement d’un système de monitoring connecté pour la maintenance prédictive et la collecte de données en temps réel.</p>
+                            <div class="carousel-tags"><span>IoT</span><span>Node-RED</span><span>Python</span></div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide glassmorphism shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Projet 2" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">Interface Web Maintenance</h3>
+                            <p class="carousel-desc">Création d’une application web pour la gestion des interventions et le suivi des équipements industriels.</p>
+                            <div class="carousel-tags"><span>Web</span><span>JavaScript</span><span>Tailwind</span></div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide glassmorphism shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Projet 3" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">Optimisation énergétique</h3>
+                            <p class="carousel-desc">Mise en place d’un système d’analyse pour réduire la consommation énergétique des machines et améliorer la performance.</p>
+                            <div class="carousel-tags"><span>Énergie</span><span>Automatisme</span><span>DataViz</span></div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide glassmorphism shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" alt="Projet 4" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">Support technique 24/7</h3>
+                            <p class="carousel-desc">Mise en place d’un service de support technique réactif pour les clients industriels, avec base de connaissances interactive.</p>
+                            <div class="carousel-tags"><span>Support</span><span>Automatisation</span><span>Cloud</span></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow right" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-pagination flex justify-center gap-2 mt-6"></div>
+            </div>
+        </section>
+
+        <!-- Statistiques animées premium -->
+        <section id="stats" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Chiffres clés</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="stat-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-briefcase text-3xl text-blue-500 mb-4"></i>
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label mt-2">Années d’expérience</span>
+                </div>
+                <div class="stat-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-project-diagram text-3xl text-green-500 mb-4"></i>
+                    <span class="stat-number" data-target="32">0</span>
+                    <span class="stat-label mt-2">Projets réalisés</span>
+                </div>
+                <div class="stat-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-users text-3xl text-purple-500 mb-4"></i>
+                    <span class="stat-number" data-target="19">0</span>
+                    <span class="stat-label mt-2">Clients satisfaits</span>
+                </div>
+                <div class="stat-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-tools text-3xl text-yellow-500 mb-4"></i>
+                    <span class="stat-number" data-target="120">0</span>
+                    <span class="stat-label mt-2">Interventions techniques</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mes services -->
+        <section id="services" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Mes services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="service-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-cogs text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="service-title font-bold text-xl mb-2">Maintenance industrielle</h3>
+                    <p class="service-desc text-gray-700 dark:text-gray-300 text-center">Entretien, réparation et optimisation de vos équipements pour garantir leur performance et leur sécurité.</p>
+                </div>
+                <div class="service-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-network-wired text-4xl text-green-500 mb-4"></i>
+                    <h3 class="service-title font-bold text-xl mb-2">Automatisation & IoT</h3>
+                    <p class="service-desc text-gray-700 dark:text-gray-300 text-center">Solutions connectées, supervision, automatisation des processus industriels et collecte de données.</p>
+                </div>
+                <div class="service-card glassmorphism flex flex-col items-center p-8 shadow-xl">
+                    <i class="fas fa-laptop-code text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="service-title font-bold text-xl mb-2">Développement web</h3>
+                    <p class="service-desc text-gray-700 dark:text-gray-300 text-center">Création de sites vitrines, applications métiers, interfaces de gestion et outils personnalisés.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ma boutique -->
+        <section id="shop" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Ma boutique</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="shop-card glassmorphism flex flex-col items-center p-6 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Audit technique" class="shop-img mb-4 rounded-xl shadow-md">
+                    <h3 class="shop-title font-bold text-lg mb-2">Audit technique</h3>
+                    <p class="shop-desc text-center text-gray-700 dark:text-gray-300 mb-2">Diagnostic complet de vos installations industrielles.</p>
+                    <span class="shop-price font-bold text-blue-600 dark:text-blue-400 text-lg mb-3">149&nbsp;€</span>
+                    <button class="shop-btn bg-gradient-to-r from-blue-600 to-blue-400 text-white px-5 py-2 rounded-full shadow hover:scale-105 transition-all">Commander</button>
+                </div>
+                <div class="shop-card glassmorphism flex flex-col items-center p-6 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80" alt="Pack maintenance" class="shop-img mb-4 rounded-xl shadow-md">
+                    <h3 class="shop-title font-bold text-lg mb-2">Pack maintenance</h3>
+                    <p class="shop-desc text-center text-gray-700 dark:text-gray-300 mb-2">Forfait d’interventions préventives et correctives sur site.</p>
+                    <span class="shop-price font-bold text-blue-600 dark:text-blue-400 text-lg mb-3">399&nbsp;€</span>
+                    <button class="shop-btn bg-gradient-to-r from-green-600 to-green-400 text-white px-5 py-2 rounded-full shadow hover:scale-105 transition-all">Commander</button>
+                </div>
+                <div class="shop-card glassmorphism flex flex-col items-center p-6 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Formation personnalisée" class="shop-img mb-4 rounded-xl shadow-md">
+                    <h3 class="shop-title font-bold text-lg mb-2">Formation personnalisée</h3>
+                    <p class="shop-desc text-center text-gray-700 dark:text-gray-300 mb-2">Sessions sur-mesure en automatisme, IoT ou maintenance industrielle.</p>
+                    <span class="shop-price font-bold text-blue-600 dark:text-blue-400 text-lg mb-3">249&nbsp;€</span>
+                    <button class="shop-btn bg-gradient-to-r from-purple-600 to-purple-400 text-white px-5 py-2 rounded-full shadow hover:scale-105 transition-all">Commander</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Faire un don -->
+        <section id="don" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-8">Faire un don</h2>
+            <div class="max-w-lg mx-auto">
+                <form id="donForm" class="bg-white bg-opacity-80 shadow-xl rounded px-8 pt-6 pb-8 mb-4 glassmorphism animate-fadeInUp" aria-label="Formulaire de don">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="donName">Nom</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="donName" name="donName" type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="donEmail">Email</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="donEmail" name="donEmail" type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="donAmount">Montant (€)</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="donAmount" name="donAmount" type="number" min="1" step="0.01" placeholder="Montant du don" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Moyen de paiement</label>
+                        <div class="flex gap-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="donPayment" value="paypal" class="form-radio" checked>
+                                <span class="ml-2">PayPal</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="donPayment" value="virement" class="form-radio">
+                                <span class="ml-2">Virement bancaire</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="donVirementInfo" class="hidden mt-4 p-3 border border-blue-200 rounded bg-blue-50 text-blue-900 text-sm">
+                        Merci pour votre générosité !<br>Pour effectuer un virement, contactez-nous ou utilisez l’IBAN qui sera communiqué ici prochainement.
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="donMessage">Message (optionnel)</label>
+                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="donMessage" name="donMessage" placeholder="Un mot d'encouragement ?" rows="3"></textarea>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button id="donBtn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full shadow hover:scale-105 transition-all duration-300 animate-fadeInUp flex items-center justify-center gap-2" type="submit" aria-label="Faire un don">
+                            <span id="donBtnText">Faire un don</span>
+                            <span id="donBtnLoader" class="hidden loader-btn"></span>
+                        </button>
+                        <div id="donSuccess" class="hidden mt-4 text-green-600 font-semibold animate-fadeInUp">Merci pour votre don !</div>
+                    </div>
+                </form>
+                <div class="mt-4 text-center text-gray-500 text-xs" id="donationCustomText"></div>
             </div>
         </section>
 
@@ -95,7 +344,7 @@
                         <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Votre Message" rows="4" aria-required="true" aria-label="Message"></textarea>
                     </div>
                     <div class="flex items-center justify-center">
-                        <button id="contactBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-300 animate-fadeInUp flex items-center justify-center gap-2" type="submit" aria-label="Envoyer le message">
+                        <button id="contactBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow hover:scale-105 transition-all duration-300 animate-fadeInUp flex items-center justify-center gap-2" type="submit" aria-label="Envoyer le message">
                             <span id="btnText">Envoyer le message</span>
                             <span id="btnLoader" class="hidden loader-btn"></span>
                         </button>
@@ -104,46 +353,152 @@
                 </form>
             </div>
         </section>
-    </main>
 
-    <!-- Chatbot premium floating button & window -->
-    <button id="chatbotToggle" aria-label="Ouvrir le chatbot" class="fixed bottom-8 right-8 md:bottom-8 md:right-8 bottom-20 right-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full shadow-2xl p-4 flex items-center justify-center z-60 chatbot-fab transition-all hover:scale-110">
-        <i class="fas fa-comments fa-lg"></i>
-    </button>
-    <div id="chatbotWindow" class="fixed bottom-28 right-8 md:bottom-28 md:right-8 bottom-32 right-4 w-80 max-w-xs bg-white bg-opacity-90 glassmorphism shadow-2xl rounded-2xl flex flex-col z-60 chatbot-window hidden animate-fadeInUp">
-        <div class="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-700 to-blue-500 rounded-t-2xl">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-robot text-white"></i>
-                <span class="text-white font-bold">Chatbot</span>
+        <!-- Blog -->
+        <section id="blog" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Blog</h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8" id="blogArticles">
+                <!-- Articles dynamiques -->
             </div>
-            <button id="chatbotClose" aria-label="Fermer le chatbot" class="text-white hover:text-gray-200 focus:outline-none"><i class="fas fa-times"></i></button>
-        </div>
-        <div id="chatbotMessages" class="flex-1 px-4 py-3 overflow-y-auto space-y-2 chatbot-messages">
-            <div class="chatbot-message-bot">Bonjour ! Je suis le chatbot d’Anthony. Comment puis-je vous aider ?</div>
-        </div>
-        <form id="chatbotForm" class="flex items-center gap-2 px-4 py-3 border-t">
-            <input id="chatbotInput" type="text" placeholder="Écrivez votre message..." aria-label="Votre message" class="flex-1 rounded-full border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" autocomplete="off" />
-            <button type="submit" aria-label="Envoyer" class="bg-blue-500 hover:bg-blue-700 text-white rounded-full px-4 py-2 font-bold transition-all"><i class="fas fa-paper-plane"></i></button>
-        </form>
-    </div>
+        </section>
 
-    <!-- Bouton Scroll-to-Top -->
-    <button id="scrollToTop" aria-label="Retour en haut" class="hidden fixed bottom-8 right-8 bg-blue-600 text-white rounded-full shadow-2xl p-3 transition-all duration-300 hover:bg-blue-800 z-40">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
-
-    <footer class="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 text-white py-8 shadow-2xl animate-fadeInUp" role="contentinfo">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Anthony Legros. Tous droits réservés.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a href="https://linkedin.com/in/anthonylegros" target="_blank" rel="noopener" class="text-white hover:text-blue-400" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/anthonylegros" target="_blank" rel="noopener" class="text-white hover:text-gray-400" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="mailto:your.email@example.com" class="text-white hover:text-gray-400" aria-label="Envoyer un email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <!-- Liens utiles -->
+        <section id="liens-utiles" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Liens utiles</h2>
+            <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-6" id="liensUtiles">
+                <!-- Liens dynamiques -->
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Script JS principal -->
-    <script src="script.js" defer></script>
-</body>
+        <!-- Témoignages -->
+        <section id="testimonials" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Témoignages</h2>
+            <div class="max-w-3xl mx-auto" id="testimonialList">
+                <!-- Témoignages dynamiques -->
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
+            <div class="max-w-3xl mx-auto" id="faqList">
+                <!-- FAQ dynamique -->
+            </div>
+        </section>
+
+        <!-- Équipe -->
+        <section id="team" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">L’équipe</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8" id="teamList">
+                <!-- Membres dynamiques -->
+            </div>
+        </section>
+
+        <!-- Actualités/événements -->
+        <section id="events" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Actualités & Événements</h2>
+            <div class="max-w-3xl mx-auto" id="eventList">
+                <!-- Événements dynamiques -->
+            </div>
+        </section>
+
+        <!-- Fichiers/documents -->
+        <section id="files" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Fichiers à télécharger</h2>
+            <div class="max-w-2xl mx-auto" id="fileList">
+                <!-- Fichiers dynamiques -->
+            </div>
+        </section>
+
+        <!-- Réseaux sociaux -->
+        <section id="social" class="py-16 animate-fadeInUp">
+            <h2 class="text-3xl font-bold text-center mb-12">Réseaux sociaux</h2>
+            <div class="max-w-2xl mx-auto flex flex-wrap gap-6 justify-center" id="socialLinks">
+                <!-- Réseaux dynamiques -->
+            </div>
+        </section>
+
+        <!-- Chatbot premium floating button & window -->
+        <button id="chatbotToggle" aria-label="Ouvrir le chatbot" class="fixed bottom-8 right-8 md:bottom-8 md:right-8 bottom-20 right-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full shadow-2xl p-4 flex items-center justify-center z-60 chatbot-fab transition-all hover:scale-110">
+            <i class="fas fa-comments fa-lg"></i>
+        </button>
+        <div id="chatbotWindow" class="fixed bottom-28 right-8 md:bottom-28 md:right-8 bottom-32 right-4 w-80 max-w-xs bg-white bg-opacity-90 glassmorphism shadow-2xl rounded-2xl flex flex-col z-60 chatbot-window hidden animate-fadeInUp">
+            <div class="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-700 to-blue-500 rounded-t-2xl">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-robot text-white"></i>
+                    <span class="text-white font-bold">Chatbot</span>
+                </div>
+                <button id="chatbotClose" aria-label="Fermer le chatbot" class="text-white hover:text-gray-200 focus:outline-none"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbotMessages" class="flex-1 px-4 py-3 overflow-y-auto space-y-2 chatbot-messages">
+                <div class="chatbot-message-bot">Bonjour ! Je suis le chatbot d’Anthony. Comment puis-je vous aider ?</div>
+            </div>
+            <form id="chatbotForm" class="flex items-center gap-2 px-4 py-3 border-t">
+                <input id="chatbotInput" type="text" placeholder="Écrivez votre message..." aria-label="Votre message" class="flex-1 rounded-full border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" autocomplete="off" />
+                <button type="submit" aria-label="Envoyer" class="bg-blue-500 hover:bg-blue-700 text-white rounded-full px-4 py-2 font-bold transition-all"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+        <!-- Bouton Scroll-to-Top -->
+        <button id="scrollToTop" aria-label="Retour en haut" class="hidden fixed bottom-8 right-8 bg-blue-600 text-white rounded-full shadow-2xl p-3 transition-all duration-300 hover:bg-blue-800 z-40">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
+        <!-- Bouton menu latéral admin -->
+        <button id="adminMenuToggle" aria-label="Ouvrir l’espace d’administration" class="fixed top-1/2 right-0 z-70 bg-gradient-to-r from-blue-700 to-blue-500 text-white p-3 rounded-l-2xl shadow-2xl hover:scale-105 transition-all focus:outline-none">
+            <i class="fas fa-user-cog fa-lg"></i>
+        </button>
+        <!-- Menu latéral admin MODERNE -->
+        <aside id="adminSidebar" class="fixed top-0 right-0 h-full w-96 max-w-full bg-white shadow-2xl z-80 flex flex-col admin-sidebar">
+            <div class="flex items-center justify-between px-6 py-4 border-b bg-gradient-to-r from-blue-700 to-blue-500">
+                <span class="text-white font-bold text-lg">Espace administration</span>
+                <button id="adminSidebarClose" aria-label="Fermer l’espace admin" class="text-white hover:text-gray-200 focus:outline-none"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="adminLoginForm" class="flex flex-col gap-4 px-6 py-8">
+                <input type="text" id="adminUser" class="rounded border px-2 py-1" placeholder="Identifiant" autocomplete="username" required />
+                <input type="password" id="adminPass" class="rounded border px-2 py-1" placeholder="Mot de passe" autocomplete="current-password" required />
+                <button type="submit" class="bg-blue-600 hover:bg-blue-800 text-white rounded-full px-4 py-2 font-bold">Se connecter</button>
+            </form>
+            <div id="adminLoginSuccess" class="hidden px-6 text-green-600 font-semibold">Connexion réussie !</div>
+            <div id="adminLoginError" class="hidden px-6 text-red-600 font-semibold">Identifiants invalides.</div>
+            <!-- Menu dynamique des sections admin -->
+            <div id="adminPanel" class="hidden flex-1 overflow-y-auto px-6 py-4">
+                <div class="flex gap-4">
+                    <nav id="adminMenuSections" class="flex flex-col w-48 border-r pr-4"></nav>
+                    <div class="flex-1">
+                        <div class="admin-section hidden" id="adminSection-about"></div>
+                        <div class="admin-section hidden" id="adminSection-timeline"></div>
+                        <div class="admin-section hidden" id="adminSection-projects-carousel"></div>
+                        <div class="admin-section hidden" id="adminSection-stats"></div>
+                        <div class="admin-section hidden" id="adminSection-services"></div>
+                        <div class="admin-section hidden" id="adminSection-shop"></div>
+                        <div class="admin-section hidden" id="adminSection-don"></div>
+                        <div class="admin-section hidden" id="adminSection-contact"></div>
+                        <div class="admin-section hidden" id="adminSection-blog"></div>
+                        <div class="admin-section hidden" id="adminSection-liens-utiles"></div>
+                        <div class="admin-section hidden" id="adminSection-testimonials"></div>
+                        <div class="admin-section hidden" id="adminSection-faq"></div>
+                        <div class="admin-section hidden" id="adminSection-team"></div>
+                        <div class="admin-section hidden" id="adminSection-events"></div>
+                        <div class="admin-section hidden" id="adminSection-files"></div>
+                        <div class="admin-section hidden" id="adminSection-social"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <footer class="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 text-white py-8 shadow-2xl animate-fadeInUp" role="contentinfo">
+            <div class="container mx-auto px-6 text-center">
+                <p>&copy; 2024 Anthony Legros. Tous droits réservés.</p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="https://linkedin.com/in/anthonylegros" target="_blank" rel="noopener" class="text-white hover:text-blue-400" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/anthonylegros" target="_blank" rel="noopener" class="text-white hover:text-gray-400" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="mailto:your.email@example.com" class="text-white hover:text-gray-400" aria-label="Envoyer un email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script JS principal -->
+        <script type="module" src="js/main.js"></script>
+    </body>
 </html>
