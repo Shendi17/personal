@@ -96,8 +96,8 @@ window.addEventListener('DOMContentLoaded', () => {
             const user = document.getElementById('adminUser').value.trim();
             const pass = document.getElementById('adminPass').value;
             // Vérification locale simple (à adapter à ton backend !)
-            // Pour la démo : user = 'admin', pass = 'waohost'
-            if (user === 'admin' && pass === 'waohost') {
+            // Pour la démo : user = 'admin', pass = 'admin123'
+            if (user === 'admin' && pass === 'admin123') {
                 adminLoginForm.classList.add('hidden');
                 if (adminPanel) adminPanel.classList.remove('hidden');
                 adminLoginSuccess.classList.remove('hidden');
