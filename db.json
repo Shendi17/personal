@@ -1,83 +1,314 @@
 {
+  "hero": {
+    "name": "Anthony Legros",
+    "title": "Technicien Polyvalent",
+    "subtitle": "Maintenance Industrielle | Solutions Techniques | Automatisation",
+    "photo": "https://ui-avatars.com/api/?name=Anthony+Legros&background=2563eb&color=fff&size=200&bold=true",
+    "carousel": [
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "cv": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "linkedin": "https://linkedin.com/in/anthonylegros",
+    "github": "https://github.com/anthonylegros",
+    "visible": true
+  },
   "about": {
-    "title": "",
-    "text": "",
+    "title": "À propos de moi",
+    "text": "Je suis un Technicien Polyvalent passionné par la maintenance industrielle et les solutions techniques. Mon expertise couvre un large éventail de compétences techniques, de la maintenance préventive et corrective à l'optimisation des équipements industriels. Avec plusieurs années d'expérience dans le domaine, je mets mon savoir-faire au service de vos projets pour garantir performance et fiabilité.",
     "visible": true
   },
   "timeline": {
-    "title": "",
+    "title": "Mon Parcours",
     "visible": true,
-    "steps": []
+    "steps": [
+      {
+        "date": "2020 - Présent",
+        "title": "Technicien Polyvalent Senior",
+        "company": "Industrie Tech Solutions",
+        "description": "Maintenance préventive et corrective, optimisation des processus industriels",
+        "icon": "fas fa-briefcase"
+      },
+      {
+        "date": "2018 - 2020",
+        "title": "Technicien de Maintenance",
+        "company": "MecaTech Industries",
+        "description": "Intervention sur équipements automatisés, dépannage électrique et mécanique",
+        "icon": "fas fa-tools"
+      },
+      {
+        "date": "2016 - 2018",
+        "title": "Formation Professionnelle",
+        "company": "Centre de Formation Technique",
+        "description": "Diplôme en Maintenance Industrielle et Automatisation",
+        "icon": "fas fa-graduation-cap"
+      }
+    ]
   },
   "projects-carousel": {
-    "title": "",
+    "title": "Mes Réalisations",
     "visible": true,
-    "projects": []
+    "projects": [
+      {
+        "title": "Automatisation Ligne de Production",
+        "description": "Mise en place d'un système d'automatisation complet pour une ligne de production, augmentant la productivité de 40%",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+        "tags": [
+          "Automatisation",
+          "PLC",
+          "Industrie 4.0"
+        ]
+      },
+      {
+        "title": "Maintenance Préventive Optimisée",
+        "description": "Développement d'un programme de maintenance préventive réduisant les temps d'arrêt de 60%",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+        "tags": [
+          "Maintenance",
+          "Optimisation",
+          "GMAO"
+        ]
+      },
+      {
+        "title": "Modernisation Équipements",
+        "description": "Retrofit complet d'équipements industriels avec intégration de capteurs IoT pour monitoring en temps réel",
+        "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+        "tags": [
+          "IoT",
+          "Modernisation",
+          "Monitoring"
+        ]
+      }
+    ]
   },
   "stats": {
-    "title": "",
+    "title": "Chiffres Clés",
     "visible": true,
-    "stats": []
+    "stats": [
+      {
+        "number": "150+",
+        "label": "Interventions réussies",
+        "icon": "fas fa-check-circle",
+        "color": "blue"
+      },
+      {
+        "number": "98%",
+        "label": "Taux de satisfaction",
+        "icon": "fas fa-star",
+        "color": "yellow"
+      },
+      {
+        "number": "5+",
+        "label": "Années d'expérience",
+        "icon": "fas fa-calendar-alt",
+        "color": "green"
+      },
+      {
+        "number": "24/7",
+        "label": "Support disponible",
+        "icon": "fas fa-headset",
+        "color": "red"
+      }
+    ]
   },
   "services": {
-    "title": "",
+    "title": "Mes Services",
     "visible": true,
-    "services": []
+    "services": [
+      {
+        "title": "Maintenance Préventive",
+        "description": "Programme de maintenance régulière pour éviter les pannes et optimiser la durée de vie de vos équipements",
+        "icon": "fas fa-calendar-check",
+        "price": "Sur devis"
+      },
+      {
+        "title": "Dépannage d'Urgence",
+        "description": "Intervention rapide 24/7 pour résoudre vos problèmes techniques et minimiser les temps d'arrêt",
+        "icon": "fas fa-ambulance",
+        "price": "À partir de 80€/h"
+      },
+      {
+        "title": "Automatisation",
+        "description": "Conception et mise en place de systèmes d'automatisation pour améliorer votre productivité",
+        "icon": "fas fa-robot",
+        "price": "Sur devis"
+      },
+      {
+        "title": "Formation Technique",
+        "description": "Formation de vos équipes aux bonnes pratiques de maintenance et à l'utilisation des équipements",
+        "icon": "fas fa-chalkboard-teacher",
+        "price": "500€/jour"
+      }
+    ]
   },
   "shop": {
-    "title": "",
+    "title": "Boutique",
     "visible": true,
-    "products": []
+    "products": [
+      {
+        "name": "Kit de Maintenance Complet",
+        "description": "Ensemble d'outils professionnels pour la maintenance industrielle",
+        "price": "299€",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80",
+        "stock": 15
+      },
+      {
+        "name": "Manuel Technique Avancé",
+        "description": "Guide complet de maintenance industrielle et automatisation",
+        "price": "49€",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+        "stock": 50
+      }
+    ]
   },
   "don": {
-    "title": "",
+    "title": "Faire un don",
     "visible": true,
-    "customText": "",
+    "customText": "Soutenez mon travail et mes projets de formation gratuite en maintenance industrielle",
     "donations": []
   },
   "contact": {
-    "title": "",
+    "title": "Contact",
     "visible": true,
-    "email": ""
+    "email": "contact@anthonylegros.com"
   },
   "blog": {
-    "title": "",
+    "title": "Blog",
     "visible": true,
-    "articles": []
+    "articles": [
+      {
+        "title": "Les bonnes pratiques de maintenance préventive",
+        "date": "15 Mars 2024",
+        "description": "Découvrez comment mettre en place une stratégie de maintenance préventive efficace pour réduire les coûts et améliorer la disponibilité de vos équipements.",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
+        "content": "La maintenance préventive est essentielle..."
+      },
+      {
+        "title": "IoT et Industrie 4.0 : Guide complet",
+        "date": "8 Mars 2024",
+        "description": "L'Internet des Objets révolutionne l'industrie. Apprenez comment intégrer ces technologies dans vos processus de maintenance.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+        "content": "L'IoT permet de surveiller en temps réel..."
+      }
+    ]
   },
   "liens-utiles": {
-    "title": "",
+    "title": "Liens Utiles",
     "visible": true,
-    "links": []
+    "links": [
+      {
+        "title": "Documentation Technique",
+        "url": "https://example.com/docs",
+        "description": "Accédez à la documentation technique complète"
+      },
+      {
+        "title": "Forum Maintenance",
+        "url": "https://example.com/forum",
+        "description": "Rejoignez la communauté des professionnels de la maintenance"
+      }
+    ]
   },
   "testimonials": {
-    "title": "",
+    "title": "Témoignages",
     "visible": true,
-    "testimonials": []
+    "testimonials": [
+      {
+        "name": "Jean Dupont",
+        "role": "Directeur Technique",
+        "company": "Industrie XYZ",
+        "text": "Anthony a transformé notre approche de la maintenance. Grâce à son expertise, nous avons réduit nos temps d'arrêt de 60% !",
+        "rating": 5
+      },
+      {
+        "name": "Marie Martin",
+        "role": "Responsable Production",
+        "company": "MecaTech",
+        "text": "Un professionnel compétent et réactif. Ses interventions sont toujours efficaces et bien documentées.",
+        "rating": 5
+      }
+    ]
   },
   "faq": {
-    "title": "",
+    "title": "FAQ",
     "visible": true,
-    "faq": []
+    "faq": [
+      {
+        "question": "Quels sont vos délais d'intervention ?",
+        "answer": "Pour les urgences, j'interviens dans les 2 heures. Pour les maintenances préventives, nous planifions ensemble selon vos disponibilités."
+      },
+      {
+        "question": "Travaillez-vous sur tous types d'équipements ?",
+        "answer": "Oui, je travaille sur une large gamme d'équipements industriels : machines-outils, systèmes automatisés, équipements électriques, etc."
+      },
+      {
+        "question": "Proposez-vous des contrats de maintenance ?",
+        "answer": "Absolument ! Je propose des contrats de maintenance préventive adaptés à vos besoins et votre budget."
+      }
+    ]
   },
   "team": {
-    "title": "",
+    "title": "L'Équipe",
     "visible": true,
-    "members": []
+    "members": [
+      {
+        "name": "Anthony Legros",
+        "role": "Technicien Polyvalent Senior",
+        "photo": "https://ui-avatars.com/api/?name=Anthony+Legros&background=2563eb&color=fff&size=200&bold=true",
+        "bio": "Expert en maintenance industrielle avec plus de 5 ans d'expérience"
+      }
+    ]
   },
   "events": {
-    "title": "",
+    "title": "Actualités & Événements",
     "visible": true,
-    "events": []
+    "events": [
+      {
+        "title": "Formation Maintenance Préventive",
+        "date": "25 Mars 2024",
+        "description": "Session de formation gratuite sur les bonnes pratiques de maintenance préventive",
+        "location": "En ligne"
+      }
+    ]
   },
   "files": {
-    "title": "",
+    "title": "Fichiers à télécharger",
     "visible": true,
-    "files": []
+    "files": [
+      {
+        "originalname": "Guide-Maintenance.pdf",
+        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      }
+    ]
   },
   "social": {
-    "title": "",
+    "title": "Réseaux Sociaux",
     "visible": true,
-    "social": []
+    "social": [
+      {
+        "url": "https://linkedin.com/in/anthonylegros",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "url": "https://github.com/anthonylegros",
+        "icon": "fab fa-github"
+      },
+      {
+        "url": "https://twitter.com/anthonylegros",
+        "icon": "fab fa-twitter"
+      },
+      {
+        "url": "https://facebook.com/Shen17",
+        "icon": "fab fa-facebook"
+      }
+    ]
+  },
+  "products": [],
+  "articles": [],
+  "links": [],
+  "donation": {
+    "customText": "Soutenez mon travail et mes projets de formation gratuite",
+    "donations": []
   }
 }

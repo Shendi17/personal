@@ -25,14 +25,38 @@ const db = new Low(adapter);
 app.use(cors());
 app.use(bodyParser.json());
 
+// Configuration de Multer pour l'upload de fichiers
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadDir = path.join(__dirname, 'uploads', 'images');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB max (pour les PDF)
+  fileFilter: (req, file, cb) => {
+    const allowedTypes = /jpeg|jpg|png|gif|webp|pdf/;
+    const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = file.mimetype.includes('image') || file.mimetype.includes('pdf');
+    if (extname && mimetype) {
+      return cb(null, true);
+    }
+    cb(new Error('Seuls les images (jpeg, jpg, png, gif, webp) et PDF sont autorisés'));
+  }
+});
+
 // Servir les fichiers statiques (HTML, CSS, JS, images)
 app.use(express.static(__dirname));
-
-// Multer pour upload de fichiers
-const upload = multer({ dest: path.join(__dirname, 'uploads/') });
-if (!fs.existsSync(path.join(__dirname, 'uploads'))) {
-  fs.mkdirSync(path.join(__dirname, 'uploads'));
-}
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware pour charger la DB
 app.use(async (req, res, next) => {
@@ -43,6 +67,7 @@ app.use(async (req, res, next) => {
 
 // --- Ajout du champ "visible" pour chaque section et gestion PATCH générique ---
 const sectionDefaults = {
+  hero: { name: '', title: '', subtitle: '', photo: '', carousel: [], cv: '', linkedin: '', github: '', visible: true },
   about: { title: '', text: '', visible: true },
   timeline: { title: '', visible: true, steps: [] },
   'projects-carousel': { title: '', visible: true, projects: [] },
@@ -347,19 +372,19 @@ entities.forEach(entity => {
   });
 });
 
-// Upload de fichiers
-app.post('/api/upload', upload.single('file'), (req, res) => {
-  if (!req.file) return res.status(400).json({ error: 'Aucun fichier' });
-  req.db.data.files.push({
-    originalname: req.file.originalname,
-    filename: req.file.filename,
-    mimetype: req.file.mimetype,
-    size: req.file.size,
-    url: `/uploads/${req.file.filename}`
-  });
-  db.write();
-  res.status(201).json({ success: true, file: req.file });
-});
+// Upload de fichiers (ANCIENNE ROUTE - COMMENTÉE car doublon avec la nouvelle route plus bas)
+// app.post('/api/upload', upload.single('file'), (req, res) => {
+//   if (!req.file) return res.status(400).json({ error: 'Aucun fichier' });
+//   req.db.data.files.push({
+//     originalname: req.file.originalname,
+//     filename: req.file.filename,
+//     mimetype: req.file.mimetype,
+//     size: req.file.size,
+//     url: `/uploads/${req.file.filename}`
+//   });
+//   db.write();
+//   res.status(201).json({ success: true, file: req.file });
+// });
 
 // Servir les fichiers uploadés
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -420,6 +445,47 @@ app.post('/api/login', (req, res) => {
     res.json({ success: true });
   } else {
     res.status(401).json({ success: false });
+  }
+});
+
+// --- Réinitialisation complète des données ---
+app.post('/api/reset-all', async (req, res) => {
+  try {
+    // Charger les données par défaut
+    const defaultDataPath = path.join(__dirname, 'db-default.json');
+    if (!fs.existsSync(defaultDataPath)) {
+      return res.status(404).json({ success: false, error: 'Fichier de données par défaut non trouvé' });
+    }
+    
+    const defaultData = JSON.parse(fs.readFileSync(defaultDataPath, 'utf8'));
+    
+    // Remplacer toutes les données
+    db.data = defaultData;
+    await db.write();
+    
+    res.json({ success: true, message: 'Toutes les données ont été réinitialisées' });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// --- Route d'upload d'images ---
+app.post('/api/upload', upload.single('image'), (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ success: false, error: 'Aucun fichier uploadé' });
+    }
+    
+    const imageUrl = `/uploads/images/${req.file.filename}`;
+    res.json({
+      success: true,
+      url: imageUrl,
+      filename: req.file.filename,
+      originalname: req.file.originalname,
+      size: req.file.size
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 

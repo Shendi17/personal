@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API</title>
+</head>
+<body>
+    <h1>Test de l'API</h1>
+    <button onclick="testAbout()">Tester About</button>
+    <button onclick="updateAbout()">Mettre à jour About</button>
+    <pre id="result"></pre>
+
+    <script type="module">
+        window.testAbout = async function() {
+            try {
+                const response = await fetch('http://localhost:3001/api/about');
+                const data = await response.json();
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+            } catch (e) {
+                document.getElementById('result').textContent = 'Erreur: ' + e.message;
+            }
+        }
+
+        window.updateAbout = async function() {
+            try {
+                const response = await fetch('http://localhost:3001/api/about', {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        title: 'Mon Profil Professionnel',
+                        text: 'Je suis un développeur passionné par les technologies web modernes.',
+                        visible: true
+                    })
+                });
+                const data = await response.json();
+                document.getElementById('result').textContent = 'Mise à jour réussie:\n' + JSON.stringify(data, null, 2);
+            } catch (e) {
+                document.getElementById('result').textContent = 'Erreur: ' + e.message;
+            }
+        }
+    </script>
+</body>
+</html>

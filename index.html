@@ -26,17 +26,17 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center" role="navigation" aria-label="Navigation principale">
             <div class="text-2xl font-bold text-gray-800 drop-shadow-md" aria-label="Logo Anthony Legros"><a href="#top" class="text-2xl font-bold text-gray-800 drop-shadow-md" aria-label="Retour en haut de page">Anthony Legros</a></div>
             <div class="flex items-center gap-4">
-                <div class="space-x-4">
-                    <a href="#about" class="hover:text-blue-600 transition" aria-label="Aller à la section À propos">À propos</a>
-                    <a href="#timeline" class="hover:text-blue-600 transition" aria-label="Aller à la section Parcours">Parcours</a>
-                    <a href="#projects-carousel" class="hover:text-blue-600 transition" aria-label="Aller à la section Réalisations">Réalisations</a>
-                    <a href="#stats" class="hover:text-blue-600 transition" aria-label="Aller à la section Chiffres clés">Chiffres clés</a>
-                    <a href="#services" class="hover:text-blue-600 transition" aria-label="Aller à la section Services">Services</a>
-                    <a href="#shop" class="hover:text-blue-600 transition" aria-label="Aller à la section Boutique">Boutique</a>
-                    <a href="#don" class="hover:text-blue-600 transition" aria-label="Aller à la section Faire un don">Faire un don</a>
-                    <a href="#contact" class="hover:text-blue-600 transition" aria-label="Aller à la section Contact">Contact</a>
-                    <a href="#blog" class="hover:text-blue-600 transition" aria-label="Aller à la section Blog">Blog</a>
-                    <a href="#liens-utiles" class="hover:text-blue-600 transition" aria-label="Aller à la section Liens utiles">Liens utiles</a>
+                <div class="space-x-4" id="header-nav-links">
+                    <a href="#about" class="hover:text-blue-600 transition" data-section="about" aria-label="Aller à la section À propos">À propos</a>
+                    <a href="#timeline" class="hover:text-blue-600 transition" data-section="timeline" aria-label="Aller à la section Parcours">Parcours</a>
+                    <a href="#projects-carousel" class="hover:text-blue-600 transition" data-section="projects-carousel" aria-label="Aller à la section Réalisations">Réalisations</a>
+                    <a href="#stats" class="hover:text-blue-600 transition" data-section="stats" aria-label="Aller à la section Chiffres clés">Chiffres clés</a>
+                    <a href="#services" class="hover:text-blue-600 transition" data-section="services" aria-label="Aller à la section Services">Services</a>
+                    <a href="#shop" class="hover:text-blue-600 transition" data-section="shop" aria-label="Aller à la section Boutique">Boutique</a>
+                    <a href="#don" class="hover:text-blue-600 transition" data-section="don" aria-label="Aller à la section Faire un don">Faire un don</a>
+                    <a href="#contact" class="hover:text-blue-600 transition" data-section="contact" aria-label="Aller à la section Contact">Contact</a>
+                    <a href="#blog" class="hover:text-blue-600 transition" data-section="blog" aria-label="Aller à la section Blog">Blog</a>
+                    <a href="#liens-utiles" class="hover:text-blue-600 transition" data-section="liens-utiles" aria-label="Aller à la section Liens utiles">Liens utiles</a>
                     <div class="relative inline-block">
                         <button type="button" id="autresMenuBtn" tabindex="0"
                             class="hover:text-blue-600 transition focus:outline-none flex items-center gap-1"
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <!-- Télécharger mon CV -->
-                <a href="cv_anthony_legros.pdf" download class="ml-4 flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 hover:from-blue-700 hover:to-blue-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300" aria-label="Télécharger mon CV">
+                <a href="cv_anthony_legros.pdf" id="cv-download-link" download class="ml-4 flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 hover:from-blue-700 hover:to-blue-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300" aria-label="Télécharger mon CV">
                     <i class="fas fa-file-arrow-down text-lg"></i>
                     <span class="hidden sm:inline">Télécharger mon CV</span>
                 </a>
@@ -70,18 +70,28 @@
         </nav>
     </header>
 
-    <main class="container mx-auto px-6 pt-24" role="main">
-        <section id="hero" class="min-h-screen flex items-center justify-center" aria-labelledby="hero-title">
-            <div class="text-center">
-                <h1 id="hero-title" class="text-5xl font-bold mb-4 text-gray-900">Anthony Legros</h1>
-                <p class="text-xl text-gray-600 mb-8">Technicien Polyvalent | Maintenance Industrielle | Solutions Techniques</p>
-                <div class="flex justify-center space-x-4">
-                    <a href="https://linkedin.com/in/anthonylegros" target="_blank" rel="noopener" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition" aria-label="Profil LinkedIn Anthony Legros">LinkedIn</a>
-                    <a href="https://github.com/anthonylegros" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full transition" aria-label="Profil GitHub Anthony Legros">GitHub</a>
+    <main role="main">
+        <section id="hero" class="min-h-screen flex items-center w-full" aria-labelledby="hero-title">
+            <div class="flex w-full items-center">
+                <!-- Carrousel à gauche (1/4 de la page) -->
+                <div id="hero-carousel" class="w-1/4 h-screen relative overflow-hidden hidden">
+                    <div class="carousel-images relative w-full h-full"></div>
+                </div>
+                
+                <!-- Contenu à droite (3/4 de la page) -->
+                <div class="flex-1 px-12 text-center" id="hero-content">
+                    <img id="hero-photo" src="" alt="Photo de profil" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-xl object-cover border-4 border-blue-500 hidden">
+                    <h1 id="hero-title" class="text-5xl font-bold mb-4 text-gray-900">Anthony Legros</h1>
+                    <p class="text-xl text-gray-600 mb-8">Technicien Polyvalent | Maintenance Industrielle | Solutions Techniques</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://linkedin.com/in/anthonylegros" target="_blank" rel="noopener" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition" aria-label="Profil LinkedIn Anthony Legros">LinkedIn</a>
+                        <a href="https://github.com/anthonylegros" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full transition" aria-label="Profil GitHub Anthony Legros">GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <div class="container mx-auto px-6">
         <section id="about" class="py-16" aria-labelledby="about-title">
             <h2 id="about-title" class="text-3xl font-bold text-center mb-8">À propos de moi</h2>
             <div class="max-w-2xl mx-auto text-center mb-12">
@@ -114,9 +124,9 @@
 
         <!-- Timeline premium horizontale -->
         <section id="timeline" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Mon Parcours</h2>
+            <h2 id="timeline-title" class="text-3xl font-bold text-center mb-12">Mon Parcours</h2>
             <div class="timeline-horizontal-container overflow-x-auto pb-8">
-                <ol class="timeline-horizontal flex items-center gap-12 min-w-[800px] md:min-w-[1000px] px-6">
+                <ol id="timeline-steps" class="timeline-horizontal flex items-center gap-12 min-w-[800px] md:min-w-[1000px] px-6">
                     <li class="timeline-step">
                         <div class="timeline-dot"></div>
                         <div class="timeline-card">
@@ -159,8 +169,8 @@
 
         <!-- Carrousel premium de réalisations -->
         <section id="projects-carousel" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Réalisations marquantes</h2>
-            <div class="carousel-container mx-auto max-w-3xl relative">
+            <h2 id="projects-title" class="text-3xl font-bold text-center mb-12">Réalisations marquantes</h2>
+            <div id="projects-list" class="carousel-container mx-auto max-w-3xl relative">
                 <button class="carousel-arrow left" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track flex transition-transform duration-500 ease-in-out">
                     <div class="carousel-slide glassmorphism shadow-2xl">
@@ -203,8 +213,8 @@
 
         <!-- Statistiques animées premium -->
         <section id="stats" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Chiffres clés</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <h2 id="stats-title" class="text-3xl font-bold text-center mb-12">Chiffres clés</h2>
+            <div id="stats-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 <div class="stat-card glassmorphism flex flex-col items-center p-8 shadow-xl">
                     <i class="fas fa-briefcase text-3xl text-blue-500 mb-4"></i>
                     <span class="stat-number" data-target="7">0</span>
@@ -230,8 +240,8 @@
 
         <!-- Mes services -->
         <section id="services" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Mes services</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <h2 id="services-title" class="text-3xl font-bold text-center mb-12">Mes services</h2>
+            <div id="services-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="service-card glassmorphism flex flex-col items-center p-8 shadow-xl">
                     <i class="fas fa-cogs text-4xl text-blue-500 mb-4"></i>
                     <h3 class="service-title font-bold text-xl mb-2">Maintenance industrielle</h3>
@@ -252,8 +262,8 @@
 
         <!-- Ma boutique -->
         <section id="shop" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Ma boutique</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <h2 id="shop-title" class="text-3xl font-bold text-center mb-12">Ma boutique</h2>
+            <div id="shop-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="shop-card glassmorphism flex flex-col items-center p-6 shadow-xl">
                     <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Audit technique" class="shop-img mb-4 rounded-xl shadow-md">
                     <h3 class="shop-title font-bold text-lg mb-2">Audit technique</h3>
@@ -280,7 +290,7 @@
 
         <!-- Section Faire un don -->
         <section id="don" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-8">Faire un don</h2>
+            <h2 id="don-title" class="text-3xl font-bold text-center mb-8">Faire un don</h2>
             <div class="max-w-lg mx-auto">
                 <form id="donForm" class="bg-white bg-opacity-80 shadow-xl rounded px-8 pt-6 pb-8 mb-4 glassmorphism animate-fadeInUp" aria-label="Formulaire de don">
                     <div class="mb-4">
@@ -356,7 +366,7 @@
 
         <!-- Blog -->
         <section id="blog" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Blog</h2>
+            <h2 id="blog-title" class="text-3xl font-bold text-center mb-12">Blog</h2>
             <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8" id="blogArticles">
                 <!-- Articles dynamiques -->
             </div>
@@ -364,7 +374,7 @@
 
         <!-- Liens utiles -->
         <section id="liens-utiles" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Liens utiles</h2>
+            <h2 id="liens-title" class="text-3xl font-bold text-center mb-12">Liens utiles</h2>
             <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-6" id="liensUtiles">
                 <!-- Liens dynamiques -->
             </div>
@@ -372,7 +382,7 @@
 
         <!-- Témoignages -->
         <section id="testimonials" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Témoignages</h2>
+            <h2 id="testimonials-title" class="text-3xl font-bold text-center mb-12">Témoignages</h2>
             <div class="max-w-3xl mx-auto" id="testimonialList">
                 <!-- Témoignages dynamiques -->
             </div>
@@ -380,15 +390,14 @@
 
         <!-- FAQ -->
         <section id="faq" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
+            <h2 id="faq-title" class="text-3xl font-bold text-center mb-12">FAQ</h2>
             <div class="max-w-3xl mx-auto" id="faqList">
                 <!-- FAQ dynamique -->
             </div>
         </section>
 
         <!-- Équipe -->
-        <section id="team" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">L’équipe</h2>
+        <section id="team" class="py-16 animate-fadeInUp">`n            <h2 id="team-title" class="text-3xl font-bold text-center mb-12">L’équipe</h2>
             <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8" id="teamList">
                 <!-- Membres dynamiques -->
             </div>
@@ -396,7 +405,7 @@
 
         <!-- Actualités/événements -->
         <section id="events" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Actualités & Événements</h2>
+            <h2 id="events-title" class="text-3xl font-bold text-center mb-12">Actualités & Événements</h2>
             <div class="max-w-3xl mx-auto" id="eventList">
                 <!-- Événements dynamiques -->
             </div>
@@ -404,7 +413,7 @@
 
         <!-- Fichiers/documents -->
         <section id="files" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Fichiers à télécharger</h2>
+            <h2 id="files-title" class="text-3xl font-bold text-center mb-12">Fichiers à télécharger</h2>
             <div class="max-w-2xl mx-auto" id="fileList">
                 <!-- Fichiers dynamiques -->
             </div>
@@ -412,7 +421,7 @@
 
         <!-- Réseaux sociaux -->
         <section id="social" class="py-16 animate-fadeInUp">
-            <h2 class="text-3xl font-bold text-center mb-12">Réseaux sociaux</h2>
+            <h2 id="social-title" class="text-3xl font-bold text-center mb-12">Réseaux sociaux</h2>
             <div class="max-w-2xl mx-auto flex flex-wrap gap-6 justify-center" id="socialLinks">
                 <!-- Réseaux dynamiques -->
             </div>
@@ -466,6 +475,7 @@
                 <div class="flex gap-4">
                     <nav id="adminMenuSections" class="flex flex-col w-48 border-r pr-4"></nav>
                     <div class="flex-1">
+                        <div class="admin-section hidden" id="adminSection-hero"></div>
                         <div class="admin-section hidden" id="adminSection-about"></div>
                         <div class="admin-section hidden" id="adminSection-timeline"></div>
                         <div class="admin-section hidden" id="adminSection-projects-carousel"></div>
@@ -486,6 +496,8 @@
                 </div>
             </div>
         </aside>
+        </div>
+    </main>
 
         <footer class="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 text-white py-8 shadow-2xl animate-fadeInUp" role="contentinfo">
             <div class="container mx-auto px-6 text-center">
@@ -502,3 +514,6 @@
         <script type="module" src="js/main.js"></script>
     </body>
 </html>
+
+
+

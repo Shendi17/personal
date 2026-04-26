@@ -1,0 +1,233 @@
+{
+  "about": {
+    "title": "À propos de moi",
+    "text": "Je suis un Technicien Polyvalent passionné par la maintenance industrielle et les solutions techniques. Mon expertise couvre un large éventail de compétences techniques, de la maintenance préventive et corrective à l'optimisation des équipements industriels. Je m'engage à assurer le bon fonctionnement des installations tout en contribuant à l'amélioration continue des processus.",
+    "visible": true,
+    "content": "test"
+  },
+  "timeline": {
+    "title": "Mon Parcours",
+    "visible": true,
+    "steps": [
+      "2023 - Présent : Technicien Polyvalent - Solutions techniques avancées",
+      "2020 - 2023 : Technicien de Maintenance - Maintenance préventive et corrective",
+      "2018 - 2020 : Formation BTS Maintenance - Spécialisation industrielle",
+      "2016 - 2018 : Bac Pro MEI - Maintenance des Équipements Industriels"
+    ]
+  },
+  "projects-carousel": {
+    "title": "Réalisations marquantes",
+    "visible": true,
+    "projects": [
+      "Automatisation d'une ligne de production - Gain de 30% de productivité",
+      "Interface Web de gestion maintenance - Suivi en temps réel",
+      "Optimisation système de ventilation - Réduction 25% consommation énergétique",
+      "Installation système IoT - Monitoring équipements industriels"
+    ]
+  },
+  "stats": {
+    "title": "Chiffres clés",
+    "visible": true,
+    "stats": [
+      "5+ années d'expérience",
+      "50+ projets réalisés",
+      "98% satisfaction client",
+      "120+ interventions techniques"
+    ]
+  },
+  "services": {
+    "title": "Mes services",
+    "visible": true,
+    "services": [
+      "Maintenance industrielle - Préventive et corrective",
+      "Automatisation & IoT - Solutions connectées",
+      "Développement web - Applications métiers",
+      "Audit technique - Diagnostic complet",
+      "Formation - Transfert de compétences",
+      "Support technique - Assistance 24/7"
+    ]
+  },
+  "shop": {
+    "title": "Ma boutique",
+    "visible": true,
+    "products": [
+      "Audit technique - 149€",
+      "Pack maintenance mensuel - 299€",
+      "Formation personnalisée - 499€",
+      "Consultation IoT - 199€"
+    ]
+  },
+  "don": {
+    "title": "Faire un don",
+    "visible": true,
+    "customText": "Soutenez mes projets open-source et mes initiatives de formation gratuite pour les techniciens.",
+    "donations": []
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "visible": true,
+    "email": "anthony.legros@example.com"
+  },
+  "blog": {
+    "title": "Blog",
+    "visible": true,
+    "articles": [
+      {
+        "title": "Les bonnes pratiques de maintenance préventive",
+        "link": "https://example.com/blog/maintenance-preventive"
+      },
+      {
+        "title": "IoT et Industrie 4.0 : Guide complet",
+        "link": "https://example.com/blog/iot-industrie"
+      },
+      {
+        "title": "Optimiser la consommation énergétique",
+        "link": "https://example.com/blog/energie"
+      }
+    ]
+  },
+  "liens-utiles": {
+    "title": "Liens utiles",
+    "visible": true,
+    "links": [
+      {
+        "url": "https://docs.example.com",
+        "name": "Documentation technique"
+      },
+      {
+        "url": "https://forum.example.com",
+        "name": "Forum maintenance industrielle"
+      },
+      {
+        "url": "https://catalogue.example.com",
+        "name": "Catalogue fournisseurs"
+      },
+      {
+        "url": "https://normes.example.com",
+        "name": "Normes et certifications"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "visible": true,
+    "testimonials": [
+      {
+        "author": "Jean Dupont, Directeur Technique",
+        "text": "Anthony a résolu notre problème de production en un temps record. Professionnel et efficace !"
+      },
+      {
+        "author": "Marie Martin, Responsable Production",
+        "text": "Excellent travail sur l'automatisation de notre ligne. Résultats au-delà de nos espérances."
+      },
+      {
+        "author": "Pierre Durand, Chef d'atelier",
+        "text": "Un expert qui sait écouter et proposer des solutions adaptées. Je recommande vivement !"
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "visible": true,
+    "faq": [
+      {
+        "answer": "Je m'engage à intervenir sous 24h pour les urgences et sous 48h pour les interventions planifiées.",
+        "question": "Quels sont vos délais d'intervention ?"
+      },
+      {
+        "answer": "Oui, je suis polyvalent et interviens sur la plupart des équipements industriels : mécanique, électrique, pneumatique, hydraulique.",
+        "question": "Travaillez-vous sur tous types d'équipements ?"
+      },
+      {
+        "answer": "Absolument ! Je propose des contrats de maintenance préventive adaptés à vos besoins et votre budget.",
+        "question": "Proposez-vous des contrats de maintenance ?"
+      },
+      {
+        "answer": "Oui, je propose un service d'astreinte 24/7 pour les urgences et interventions critiques.",
+        "question": "Êtes-vous disponible en dehors des heures ouvrées ?"
+      }
+    ]
+  },
+  "team": {
+    "title": "L'équipe",
+    "visible": true,
+    "members": [
+      {
+        "photo": "https://ui-avatars.com/api/?name=Anthony+Legros&background=2563eb&color=fff&size=200",
+        "name": "Anthony Legros",
+        "role": "Technicien Polyvalent"
+      },
+      {
+        "photo": "https://ui-avatars.com/api/?name=Sophie+Bernard&background=10b981&color=fff&size=200",
+        "name": "Sophie Bernard",
+        "role": "Assistante technique"
+      },
+      {
+        "photo": "https://ui-avatars.com/api/?name=Marc+Dubois&background=8b5cf6&color=fff&size=200",
+        "name": "Marc Dubois",
+        "role": "Développeur IoT"
+      }
+    ]
+  },
+  "events": {
+    "title": "Actualités & Événements",
+    "visible": true,
+    "events": [
+      {
+        "desc": "Retrouvez-moi au stand B42 pour échanger sur les dernières innovations en maintenance.",
+        "date": "15-17 Mars 2025",
+        "title": "Salon de la Maintenance Industrielle 2025"
+      },
+      {
+        "desc": "Session en ligne gratuite sur l'utilisation de l'IoT pour anticiper les pannes.",
+        "date": "5 Avril 2025",
+        "title": "Webinar : IoT et Maintenance Prédictive"
+      },
+      {
+        "desc": "Formation pratique de 3 jours sur l'automatisation des processus industriels.",
+        "date": "20-22 Mai 2025",
+        "title": "Formation : Automatisation Industrielle"
+      }
+    ]
+  },
+  "files": {
+    "title": "Fichiers à télécharger",
+    "visible": true,
+    "files": [
+      {
+        "url": "/downloads/guide-maintenance.pdf",
+        "originalname": "Guide_Maintenance_Preventive.pdf"
+      },
+      {
+        "url": "/downloads/checklist-securite.pdf",
+        "originalname": "Checklist_Securite.pdf"
+      },
+      {
+        "url": "/downloads/catalogue-pieces.pdf",
+        "originalname": "Catalogue_Pieces_Detachees.pdf"
+      }
+    ]
+  },
+  "social": {
+    "title": "Réseaux sociaux",
+    "visible": true,
+    "social": [
+      {
+        "url": "https://linkedin.com/in/anthonylegros",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "url": "https://github.com/anthonylegros",
+        "icon": "fab fa-github"
+      },
+      {
+        "url": "https://twitter.com/anthonylegros",
+        "icon": "fab fa-twitter"
+      },
+      {
+        "url": "https://youtube.com/@anthonylegros",
+        "icon": "fab fa-youtube"
+      }
+    ]
+  }
+}

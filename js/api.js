@@ -1,7 +1,6 @@
 // js/api.js
-export const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    ? 'http://localhost:3001'
-    : 'http://waohost:3001';
+// Utilise le même domaine que la page actuelle (grâce au proxy Apache)
+export const API_BASE = window.location.origin;
 
 export async function apiGet(entity) {
     const r = await fetch(`${API_BASE}/api/${entity}`);
